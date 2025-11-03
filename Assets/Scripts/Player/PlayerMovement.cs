@@ -44,6 +44,14 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
 
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            moveSpeed = 10f;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        }
     }
 
     void OnCollisionEnter(Collision collision)

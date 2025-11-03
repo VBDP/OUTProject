@@ -55,5 +55,10 @@ public class PlayerMovement : MonoBehaviour
                 isGrounded = true;
             }
         }
+
+        if (collision.gameObject.CompareTag("Teleport"))
+        {
+            transform.position = new Vector3(134, 18, -19);
+        }
     }
 }

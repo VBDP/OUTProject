@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Teleport"))
+        if (collision.gameObject.CompareTag("Lava"))
         {
             transform.position = new Vector3(134, 18, -19);
         }

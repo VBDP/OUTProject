@@ -63,10 +63,5 @@ public class PlayerMovement : MonoBehaviour
                 isGrounded = true;
             }
         }
-
-        if (collision.gameObject.CompareTag("Lava"))
-        {
-            transform.position = new Vector3(134, 18, -19);
-        }
     }
 }

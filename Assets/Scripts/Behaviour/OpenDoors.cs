@@ -8,21 +8,27 @@ public class OpenDoors : MonoBehaviour
     private Quaternion openRotation;            
     private float rotationSpeed = 1.5f;
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private bool needsKey;
 
     void Start()
     {
         
         closedRotation = transform.rotation;
-        openRotation = Quaternion.Euler(0, 90, 0) * closedRotation; 
+        openRotation = Quaternion.Euler(0, 90, 0) * closedRotation;
+        needsKey = false;
     }
 
     private void OnMouseDown()
     {
         Debug.Log("Has hecho click en la puerta");
         float distance = Vector3.Distance(playerTransform.position, transform.position);
-        if (distance <  4 )
+        if (distance <  4 && needsKey == false )
         {
             isOpen = !isOpen;
+        }
+        else
+        {
+            Debug.Log("Necesitas una llave para abrir esta puerta");
         }
         
             
